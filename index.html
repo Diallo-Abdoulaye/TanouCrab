@@ -1,148 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TanouCrab</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TanouCrab – Privacy Policy</title>
+<link rel="icon" href="favicon.png" type="image/png" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
 
-  <!-- Fonts Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #002B5B; /* océan bleu foncé */
+    color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+  }
 
-  <style>
-    /* Reset basique */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      font-family: 'Roboto', sans-serif;
-      color: #f1f1f1;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
+  header {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
 
-    header {
-      text-align: center;
-      max-width: 900px;
-      margin-bottom: 50px;
-      padding: 20px;
-      background: rgba(255 255 255 / 0.1);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      backdrop-filter: blur(8px);
-    }
-    header img {
-      width: 300px;
-      max-width: 100%;
-      border-radius: 30px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-      transition: transform 0.4s ease;
-      cursor: pointer;
-    }
-    header img:hover {
-      transform: scale(1.05) rotate(-2deg);
-    }
+  header img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(255, 59, 59, 0.7); /* glow rouge comme le crabe */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  header img:hover {
+    transform: scale(1.05);
+  }
+
+  header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: #FF3B3B; /* rouge crabe */
+    text-shadow: 0 0 10px rgba(255, 59, 59, 0.9);
+    margin-bottom: 5px;
+    user-select: none;
+  }
+
+  header p.tagline {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #FFC6C6; /* rouge plus doux pour le texte */
+    letter-spacing: 0.06em;
+  }
+
+  main {
+    background: #ffffffdd; /* blanc translucide */
+    color: #222;
+    max-width: 850px;
+    width: 100%;
+    padding: 35px 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  main h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #FF3B3B;
+    font-size: 2.6rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #FF3B3B;
+    padding-bottom: 8px;
+  }
+
+  main h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #FF3B3B;
+    font-weight: 700;
+  }
+
+  main p {
+    margin-bottom: 14px;
+  }
+
+  a {
+    color: #FF3B3B;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #BF0000;
+    text-decoration: underline;
+  }
+
+  footer {
+    margin-top: 60px;
+    color: #bbb;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    user-select: none;
+  }
+
+  @media (max-width: 640px) {
     header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
-      margin: 20px 0 10px;
-      color: #ffd700; /* couleur or pour impact */
-      text-shadow: 2px 2px 8px #000;
+      font-size: 3rem;
     }
-    header p.intro {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #ddd;
-      letter-spacing: 0.02em;
-    }
-    header p.intro + p.intro {
-      margin-top: 1rem;
-    }
-
     main {
-      max-width: 900px;
-      background: rgba(255 255 255 / 0.1);
-      border-radius: 25px;
-      padding: 30px 40px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-      backdrop-filter: blur(12px);
-      color: #eee;
-      font-size: 1.1rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      padding: 25px 20px;
     }
-
-    main h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      color: #ffd700;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 6px #000;
-      border-bottom: 2px solid #ffd700;
-      padding-bottom: 8px;
-    }
-    main h3 {
-      font-weight: 700;
-      font-size: 1.4rem;
-      margin-top: 25px;
-      color: #ffd700;
-      text-shadow: 1px 1px 5px #000;
-    }
-
-    a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #ccc;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.4rem;
-      }
-      header p.intro {
-        font-size: 1rem;
-        padding: 0 10px;
-      }
-      main {
-        padding: 20px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
 <header>
   <img src="image_de_presentation.png" alt="TanouCrab Presentation Image" />
   <h1>TanouCrab</h1>
-  <p class="intro">
-    TanouCrab is an engaging mobile game designed for all ages. With its fun and addictive gameplay, it challenges your speed and thinking in a colorful and dynamic universe. Whether you are a casual player or an arcade enthusiast, TanouCrab promises hours of entertainment and stimulating challenges.
-  </p>
-  <p class="intro">
-    Available on Android via Google Play, TanouCrab is perfect for those who enjoy simple-to-learn but hard-to-master games.
-  </p>
+  <p class="tagline">Dive into the deep blue adventure!</p>
 </header>
 
 <main>
@@ -170,11 +154,11 @@
   <h3>6. Contact</h3>
   <p>For any questions regarding this privacy policy, please contact: <a href="mailto:10653stateman@gmail.com">10653stateman@gmail.com</a></p>
 
-  <p><a href="https://www.instagram.com/state_munna?igsh=ZmtmaTFsNmR2OHg0&utm_source=qr" target="_blank" rel="noopener">My Instagram account</a></p>
+  <p><a href="https://www.instagram.com/state_munna?igsh=ZmtmaTFsNmR2OHg0&utm_source=qr" target="_blank" rel="noopener">Instagram of State Munna</a></p>
 </main>
 
 <footer>
-  &copy; 2025 TanouCrab – All rights reserved
+  &copy; 2025 TanouCrab - All rights reserved
 </footer>
 
 </body>
