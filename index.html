@@ -9,7 +9,6 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -22,47 +21,9 @@
       padding: 20px;
       position: relative;
       overflow-x: hidden;
-
-      /* Nouveau background image + gradient */
-      background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)),
-                  url('image_site.png') no-repeat center center fixed;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    .balls {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .ball {
-      position: absolute;
-      bottom: 100%;
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle, #ffd166, #f07a28);
-      border-radius: 50%;
-      opacity: 0.7;
-      animation-name: drop;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-
-    @keyframes drop {
-      0% {
-        transform: translateY(0) scale(0.6);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(110vh) scale(1);
-        opacity: 0;
-      }
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('image_site.png') center center / cover no-repeat fixed;
     }
 
     header, main, footer {
@@ -78,7 +39,6 @@
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      backdrop-filter: blur(8px);
     }
 
     header img {
@@ -122,7 +82,6 @@
       border-radius: 25px;
       padding: 30px 40px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-      backdrop-filter: blur(12px);
       color: #eee;
       font-size: 1.1rem;
       line-height: 1.8;
@@ -164,26 +123,15 @@
       text-align: center;
       font-family: 'Montserrat', sans-serif;
       text-shadow: 1px 1px 2px #000;
-      position: relative;
-      z-index: 1;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.4rem;
-      }
-      header p.intro {
-        font-size: 1rem;
-        padding: 0 10px;
-      }
-      main {
-        padding: 20px;
-        font-size: 1rem;
-      }
+      header h1 { font-size: 2.4rem; }
+      header p.intro { font-size: 1rem; padding: 0 10px; }
+      main { padding: 20px; font-size: 1rem; }
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -229,4 +177,8 @@
 </main>
 
 <footer>
-  &copy; 2025 TanouCrab –
+  &copy; 2025 TanouCrab – All rights reserved
+</footer>
+
+</body>
+</html>
