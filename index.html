@@ -11,6 +11,7 @@
     *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       font-family: 'Roboto', sans-serif;
       color: #f1f1f1;
       line-height: 1.6;
@@ -21,9 +22,42 @@
       padding: 20px;
       position: relative;
       overflow-x: hidden;
-      background: 
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('image_site.png') center center / cover no-repeat fixed;
+    }
+
+    /* Balles tombantes en arrière-plan */
+    .balls {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .ball {
+      position: absolute;
+      bottom: 100%;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #ffd166, #f07a28);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation-name: drop;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes drop {
+      0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) scale(1);
+        opacity: 0;
+      }
     }
 
     header, main, footer {
@@ -31,20 +65,16 @@
       z-index: 1;
     }
 
-    /* 🎯 Couleur d’arrière-plan appliquée sur les blocs */
-    header, main {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      border-radius: 25px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-    }
-
     header {
       text-align: center;
       max-width: 900px;
       margin-bottom: 50px;
       padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
     }
-
     header img {
       width: 300px;
       max-width: 100%;
@@ -54,11 +84,9 @@
       transition: transform 0.4s ease;
       cursor: pointer;
     }
-
     header img:hover {
       transform: scale(1.1) rotate(-5deg);
     }
-
     @keyframes floatSea {
       0%, 100% { transform: translateY(0) rotate(-1deg); }
       50% { transform: translateY(-12px) rotate(2deg); }
@@ -72,7 +100,6 @@
       color: #ffd700;
       text-shadow: 2px 2px 8px #000;
     }
-
     header p.intro {
       font-size: 1.3rem;
       max-width: 700px;
@@ -82,12 +109,15 @@
 
     main {
       max-width: 900px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
       padding: 30px 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
       color: #eee;
       font-size: 1.1rem;
       line-height: 1.8;
     }
-
     main h2 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
@@ -97,7 +127,6 @@
       border-bottom: 2px solid #ffd700;
       padding-bottom: 8px;
     }
-
     main h3 {
       font-weight: 700;
       font-size: 1.4rem;
@@ -111,7 +140,6 @@
       text-decoration: none;
       font-weight: 700;
     }
-
     a:hover {
       color: #fff;
       text-decoration: underline;
@@ -124,6 +152,8 @@
       text-align: center;
       font-family: 'Montserrat', sans-serif;
       text-shadow: 1px 1px 2px #000;
+      position: relative;
+      z-index: 1;
     }
 
     @media (max-width: 600px) {
@@ -180,6 +210,20 @@
 <footer>
   &copy; 2025 TanouCrab – All rights reserved
 </footer>
+
+<div class="balls"></div>
+
+<script>
+  const container = document.querySelector('.balls');
+  for(let i=0; i<20; i++){
+    const ball = document.createElement('div');
+    ball.classList.add('ball');
+    ball.style.left = Math.random() * 100 + 'vw';
+    ball.style.animationDuration = (4 + Math.random() * 4) + 's';
+    ball.style.animationDelay = Math.random() * 4 + 's';
+    container.appendChild(ball);
+  }
+</script>
 
 </body>
 </html>
