@@ -9,9 +9,9 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
+
     body {
       margin: 0;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       font-family: 'Roboto', sans-serif;
       color: #f1f1f1;
       line-height: 1.6;
@@ -22,9 +22,14 @@
       padding: 20px;
       position: relative;
       overflow-x: hidden;
+
+      /* Nouveau background image + gradient */
+      background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)),
+                  url('image_site.png') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
     }
 
-    /* Balles tombantes en arrière-plan */
     .balls {
       position: fixed;
       top: 0;
@@ -75,6 +80,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
       backdrop-filter: blur(8px);
     }
+
     header img {
       width: 300px;
       max-width: 100%;
@@ -84,9 +90,11 @@
       transition: transform 0.4s ease;
       cursor: pointer;
     }
+
     header img:hover {
       transform: scale(1.1) rotate(-5deg);
     }
+
     @keyframes floatSea {
       0%, 100% { transform: translateY(0) rotate(-1deg); }
       50% { transform: translateY(-12px) rotate(2deg); }
@@ -100,6 +108,7 @@
       color: #ffd700;
       text-shadow: 2px 2px 8px #000;
     }
+
     header p.intro {
       font-size: 1.3rem;
       max-width: 700px;
@@ -118,6 +127,7 @@
       font-size: 1.1rem;
       line-height: 1.8;
     }
+
     main h2 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
@@ -127,6 +137,7 @@
       border-bottom: 2px solid #ffd700;
       padding-bottom: 8px;
     }
+
     main h3 {
       font-weight: 700;
       font-size: 1.4rem;
@@ -140,6 +151,7 @@
       text-decoration: none;
       font-weight: 700;
     }
+
     a:hover {
       color: #fff;
       text-decoration: underline;
@@ -157,12 +169,21 @@
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 2.4rem; }
-      header p.intro { font-size: 1rem; padding: 0 10px; }
-      main { padding: 20px; font-size: 1rem; }
+      header h1 {
+        font-size: 2.4rem;
+      }
+      header p.intro {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+      main {
+        padding: 20px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -208,22 +229,4 @@
 </main>
 
 <footer>
-  &copy; 2025 TanouCrab – All rights reserved
-</footer>
-
-<div class="balls"></div>
-
-<script>
-  const container = document.querySelector('.balls');
-  for(let i=0; i<20; i++){
-    const ball = document.createElement('div');
-    ball.classList.add('ball');
-    ball.style.left = Math.random() * 100 + 'vw';
-    ball.style.animationDuration = (4 + Math.random() * 4) + 's';
-    ball.style.animationDelay = Math.random() * 4 + 's';
-    container.appendChild(ball);
-  }
-</script>
-
-</body>
-</html>
+  &copy; 2025 TanouCrab –
