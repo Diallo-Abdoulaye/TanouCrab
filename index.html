@@ -8,7 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+    /* Reset & basics */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -20,94 +23,205 @@
       flex-direction: column;
       align-items: center;
       padding: 20px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Animation cléframes pour image */
+    @keyframes imagePulseRotate {
+      0% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
+      }
+      50% {
+        transform: scale(1.08) rotate(2deg);
+        filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
+      }
+    }
+
+    /* Header stylé - rectangle 1 */
     header {
       text-align: center;
       max-width: 900px;
       margin-bottom: 50px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      backdrop-filter: blur(8px);
+      padding: 30px 40px;
+      background: rgba(255 255 255 / 0.12);
+      border-radius: 35px;
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 60px rgba(255 215 0 / 0.4);
+      backdrop-filter: saturate(180%) blur(15px);
+      -webkit-backdrop-filter: saturate(180%) blur(15px);
+      border: 2px solid rgba(255 215 0 / 0.6);
+      transition: box-shadow 0.3s ease;
     }
+    header:hover {
+      box-shadow:
+        0 12px 45px rgba(255, 215, 0, 0.8),
+        inset 0 0 80px rgba(255 215 0 / 0.7);
+    }
+
+    /* Image animée */
     header img {
       width: 300px;
-      max-width: 100%;
-      border-radius: 30px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-      transition: transform 0.4s ease;
+      max-width: 90vw;
+      border-radius: 40px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.7);
       cursor: pointer;
+      animation: imagePulseRotate 6s ease-in-out infinite;
+      will-change: transform, filter;
+      transition: box-shadow 0.3s ease;
     }
     header img:hover {
-      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 25px 70px rgba(255, 215, 0, 0.9);
+      animation-play-state: paused;
+      transform: scale(1.1) rotate(-3deg);
     }
+
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 3.5rem;
-      margin: 20px 0 10px;
+      font-size: 3.8rem;
+      margin: 25px 0 15px;
       color: #ffd700;
-      text-shadow: 2px 2px 8px #000;
+      text-shadow:
+        0 0 12px #ffd700,
+        2px 2px 10px #000000aa;
+      letter-spacing: 2px;
+      user-select: none;
     }
     header p.intro {
       font-size: 1.3rem;
       max-width: 700px;
-      margin: 0 auto;
-      color: #ddd;
+      margin: 10px auto 5px;
+      color: #eee;
+      line-height: 1.5;
+      text-shadow: 1px 1px 3px #000000a0;
     }
 
+    /* Main stylé - rectangle 2 */
     main {
       max-width: 900px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      padding: 30px 40px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-      backdrop-filter: blur(12px);
+      background: rgba(255 255 255 / 0.12);
+      border-radius: 35px;
+      padding: 40px 50px;
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.55),
+        inset 0 0 30px rgba(255 215 0 / 0.3);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border: 2px solid rgba(255 215 0 / 0.5);
       color: #eee;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       line-height: 1.8;
+      transition: box-shadow 0.3s ease;
+    }
+    main:hover {
+      box-shadow:
+        0 25px 60px rgba(255, 215, 0, 0.6),
+        inset 0 0 40px rgba(255 215 0 / 0.5);
     }
     main h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
+      font-size: 2.3rem;
       color: #ffd700;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 6px #000;
-      border-bottom: 2px solid #ffd700;
-      padding-bottom: 8px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 12px #ffd700aa;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 10px;
+      user-select: none;
     }
     main h3 {
       font-weight: 700;
-      font-size: 1.4rem;
-      margin-top: 25px;
+      font-size: 1.5rem;
+      margin-top: 30px;
       color: #ffd700;
       text-shadow: 1px 1px 5px #000;
+      user-select: none;
     }
-
-    a {
-      color: #ffd700;
-      text-decoration: none;
+    main p, main a {
+      color: #eee;
+      text-shadow: 1px 1px 3px #000000aa;
+    }
+    main a {
       font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
     }
-    a:hover {
+    main a:hover, main a:focus {
       color: #fff;
-      text-decoration: underline;
+      border-color: #ffd700;
+      outline: none;
     }
 
+    /* Footer */
     footer {
       margin-top: 50px;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: #ccc;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
-      text-shadow: 1px 1px 2px #000;
+      text-shadow: 1px 1px 3px #000;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      header, main {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      header h1 {
+        font-size: 3rem;
+      }
+      main h2 {
+        font-size: 1.9rem;
+      }
+      main h3 {
+        font-size: 1.3rem;
+      }
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 2.4rem; }
-      header p.intro { font-size: 1rem; padding: 0 10px; }
-      main { padding: 20px; font-size: 1rem; }
+      body {
+        padding: 15px 10px;
+      }
+      header {
+        margin-bottom: 40px;
+        padding: 25px 20px;
+      }
+      header img {
+        width: 90vw;
+      }
+      header h1 {
+        font-size: 2.4rem;
+        margin: 20px 0 10px;
+      }
+      header p.intro {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+      main {
+        padding: 25px 20px;
+        font-size: 1rem;
+      }
+      main h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+      main h3 {
+        font-size: 1.2rem;
+        margin-top: 25px;
+      }
+      footer {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
