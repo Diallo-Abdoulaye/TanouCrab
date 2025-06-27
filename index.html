@@ -41,16 +41,15 @@
       max-width: 100%;
       border-radius: 30px;
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
       transform-style: preserve-3d;
       will-change: transform;
-      
-      /* Animation de flottement optimisée */
-      animation: floatWaveOptim 10s ease-in-out infinite;
+      /* Animation balancement doux */
+      animation: crabBalance 10s ease-in-out infinite;
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
     }
     header img:hover {
-      /* Inclinaison et translation 3D pour effet “rebond” attirant */
+      animation-play-state: paused;
       transform:
         translateZ(20px)
         rotateX(8deg)
@@ -58,21 +57,20 @@
         scale(1.07);
       box-shadow: 0 25px 60px rgba(0,0,0,0.7);
       transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      animation-play-state: paused; /* Pause flottement au hover */
     }
 
-    @keyframes floatWaveOptim {
+    @keyframes crabBalance {
       0%, 100% {
-        transform: translate3d(0, 0, 0);
+        transform: translateX(0) translateY(0) rotateZ(0deg);
       }
       25% {
-        transform: translate3d(12px, -16px, 0);
+        transform: translateX(15px) translateY(-5px) rotateZ(3deg);
       }
       50% {
-        transform: translate3d(0, -24px, 0);
+        transform: translateX(30px) translateY(0) rotateZ(0deg);
       }
       75% {
-        transform: translate3d(-12px, -16px, 0);
+        transform: translateX(15px) translateY(-5px) rotateZ(-3deg);
       }
     }
 
